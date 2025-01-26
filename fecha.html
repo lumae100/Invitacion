@@ -13,17 +13,27 @@
             text-align: center;
             background: url('mort.gif') no-repeat center center fixed;
             background-size: cover;
+            animation: gifLoop 1s steps(1) infinite;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
         }
+
+        @keyframes gifLoop {
+            100% {
+                background-position: 0 0;
+            }
+        }
+
         h1 {
             font-size: 28px;
             color: #fff;
             text-shadow: 0px 0px 5px #000;
+            margin: 0 20px;
         }
+
         input {
             padding: 10px;
             font-size: 16px;
@@ -33,6 +43,7 @@
             width: 80%;
             max-width: 300px;
         }
+
         button {
             padding: 15px 30px;
             font-size: 16px;
@@ -44,6 +55,7 @@
             margin-top: 20px;
             transition: background-color 0.3s ease;
         }
+
         button:hover {
             background-color: #45a049;
         }
@@ -52,7 +64,13 @@
 <body>
     <div>
         <h1>Elige un día para la entrega de regalo y posterior cita</h1>
-        <input type="date" id="dateInput" min="2025-01-27" max="2025-01-31">
+        <input 
+            type="date" 
+            id="dateInput" 
+            min="2025-01-27" 
+            max="2025-01-31" 
+            onfocus="this.showPicker()"
+        >
         <button onclick="validateDate()">Continuar</button>
     </div>
 
