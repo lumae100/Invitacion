@@ -11,8 +11,6 @@
             text-align: center;
             margin: 0;
             padding: 0;
-            background: url('carta-fondo.jpg') no-repeat center center fixed;
-            background-size: cover;
         }
         .container {
             padding: 20px;
@@ -60,6 +58,22 @@
         .hidden {
             display: none;
         }
+        #intro {
+            background: url('imagen-fondo.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #step1 {
+            background: url('mort.gif') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     </style>
 </head>
 <body>
@@ -89,13 +103,11 @@
     </div>
 
     <script>
-        // Navegar desde la introducción a la selección de fecha
         function goToStep1() {
             document.getElementById('intro').classList.add('hidden');
             document.getElementById('step1').classList.remove('hidden');
         }
 
-        // Navegar desde la selección de fecha a las opciones de comida
         function goToStep2() {
             const date = document.getElementById('dateInput').value;
             if (date) {
