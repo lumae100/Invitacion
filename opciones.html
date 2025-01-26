@@ -11,41 +11,81 @@
             margin: 0;
             padding: 0;
             text-align: center;
-            background-color: #f4f4f4;
+            background: url('mort.gif') no-repeat center center fixed;
+            background-size: cover;
+            animation: gifLoop 1s steps(1) infinite;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
+            flex-direction: column;
         }
+
+        @keyframes gifLoop {
+            100% {
+                background-position: 0 0;
+            }
+        }
+
         .container {
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.9); /* Fondo semitransparente */
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            width: 90%;
+            max-width: 600px;
         }
+
         h1 {
             font-size: 28px;
             margin-bottom: 20px;
         }
-        ul {
-            list-style: none;
-            padding: 0;
-            font-size: 18px;
+
+        .option {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
         }
-        li {
-            margin: 10px 0;
+
+        .option img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-right: 15px;
+        }
+
+        .option div {
+            font-size: 18px;
+            text-align: left;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Opciones para comer</h1>
-        <ul>
-            <li>Restaurante Italiano</li>
-            <li>Bar de Tapas</li>
-            <li>Comida Japonesa</li>
-            <li>Hamburguesas Gourmet</li>
-        </ul>
+        <div class="option">
+            <img src="takos.jpg" alt="Takos en Plaza del Carmen">
+            <div>Takos en Plaza del Carmen</div>
+        </div>
+        <div class="option">
+            <img src="ginos.jpg" alt="Ginos">
+            <div>Ginos</div>
+        </div>
+        <div class="option">
+            <img src="vips.jpg" alt="Vips">
+            <div>Vips</div>
+        </div>
+        <div class="option">
+            <img src="fridays.jpg" alt="Fridays">
+            <div>Fridays</div>
+        </div>
+        <div class="option">
+            <img src="shangrila.jpg" alt="Shangrila Bar Dimsum">
+            <div>Shangrila Bar Dimsum</div>
+        </div>
     </div>
 </body>
 </html>
