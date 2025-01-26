@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Regalo Sorpresa - Selección de Fecha</title>
+    <title>Regalo Sorpresa - Opciones</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -11,60 +11,41 @@
             margin: 0;
             padding: 0;
             text-align: center;
-            background: url('mort.gif') no-repeat center center fixed;
-            background-size: cover;
+            background-color: #f4f4f4;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
         }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
         h1 {
             font-size: 28px;
-            color: #fff;
-            text-shadow: 0px 0px 5px #000;
+            margin-bottom: 20px;
         }
-        input {
-            padding: 10px;
-            font-size: 16px;
-            margin-top: 20px;
-            border-radius: 5px;
-            border: none;
-            width: 80%;
-            max-width: 300px;
+        ul {
+            list-style: none;
+            padding: 0;
+            font-size: 18px;
         }
-        button {
-            padding: 15px 30px;
-            font-size: 16px;
-            cursor: pointer;
-            border: none;
-            background-color: #4CAF50;
-            color: white;
-            border-radius: 5px;
-            margin-top: 20px;
-            transition: background-color 0.3s ease;
-        }
-        button:hover {
-            background-color: #45a049;
+        li {
+            margin: 10px 0;
         }
     </style>
 </head>
 <body>
-    <div>
-        <h1>Elige un día para la entrega de regalo y posterior cita</h1>
-        <input type="date" id="dateInput" min="2025-01-27" max="2025-01-31">
-        <button onclick="validateDate()">Continuar</button>
+    <div class="container">
+        <h1>Opciones para comer</h1>
+        <ul>
+            <li>Restaurante Italiano</li>
+            <li>Bar de Tapas</li>
+            <li>Comida Japonesa</li>
+            <li>Hamburguesas Gourmet</li>
+        </ul>
     </div>
-
-    <script>
-        function validateDate() {
-            const date = document.getElementById('dateInput').value;
-            if (date) {
-                location.href = 'opciones.html';
-            } else {
-                alert("Por favor, selecciona una fecha.");
-            }
-        }
-    </script>
 </body>
 </html>
