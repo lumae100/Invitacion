@@ -10,9 +10,16 @@
             text-align: center;
             margin: 0;
             padding: 0;
+            background: url('background.gif') no-repeat center center fixed;
+            background-size: cover;
         }
         .container {
             padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            margin: 50px auto;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
         }
         button {
             padding: 10px 20px;
@@ -27,8 +34,8 @@
 </head>
 <body>
     <div id="step1" class="container">
-        <h1>Selecciona una fecha</h1>
-        <input type="date" id="dateInput" />
+        <h1>Elige un día para la entrega de regalo y posterior cita</h1>
+        <input type="date" id="dateInput" min="2025-01-27" max="2025-01-31" />
         <button onclick="goToStep2()">Continuar</button>
     </div>
 
