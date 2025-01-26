@@ -8,26 +8,60 @@
     <style>
         body {
             font-family: 'Playfair Display', serif;
-            text-align: center;
             margin: 0;
             padding: 0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
-        .container {
+
+        /* Primera pantalla */
+        #intro {
+            background: url('imagen-fondo.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+            width: 100%;
             padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Segunda pantalla */
+        #step1 {
+            background: url('mort.gif') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Pantalla de opciones */
+        .container {
             background-color: rgba(255, 255, 255, 0.9); /* Fondo semitransparente */
-            margin: 50px auto;
             border-radius: 10px;
-            width: 90%;
-            max-width: 400px;
+            padding: 20px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
+
         h1 {
             font-size: 28px;
             font-family: 'Great Vibes', cursive;
-            margin-bottom: 20px;
+            margin: 0;
         }
+
         button {
-            padding: 10px 20px;
+            padding: 15px 30px;
             font-size: 16px;
             cursor: pointer;
             border: none;
@@ -35,10 +69,13 @@
             color: white;
             border-radius: 5px;
             transition: background-color 0.3s ease;
+            margin-top: 20px;
         }
+
         button:hover {
             background-color: #45a049;
         }
+
         input[type="date"] {
             padding: 8px;
             font-size: 16px;
@@ -46,52 +83,40 @@
             border-radius: 5px;
             width: 100%;
             box-sizing: border-box;
+            margin-top: 20px;
         }
+
         ul {
             list-style: none;
             padding: 0;
-        }
-        li {
             font-size: 18px;
+        }
+
+        li {
             margin: 10px 0;
         }
+
         .hidden {
             display: none;
-        }
-        #intro {
-            background: url('imagen-fondo.jpg') no-repeat center center fixed;
-            background-size: cover;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        #step1 {
-            background: url('mort.gif') no-repeat center center fixed;
-            background-size: cover;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
     </style>
 </head>
 <body>
     <!-- Primera pantalla -->
-    <div id="intro" class="container">
+    <div id="intro">
         <h1>Invitación para entrega de regalo y comida</h1>
         <button onclick="goToStep1()">Continuar</button>
     </div>
 
     <!-- Segunda pantalla -->
-    <div id="step1" class="container hidden">
+    <div id="step1" class="hidden">
         <h1>Elige un día para la entrega de regalo y posterior cita</h1>
         <input type="date" id="dateInput" min="2025-01-27" max="2025-01-31" />
         <button onclick="goToStep2()">Continuar</button>
     </div>
 
     <!-- Tercera pantalla -->
-    <div id="step2" class="container hidden">
+    <div id="step2" class="hidden container">
         <h1>Opciones para comer</h1>
         <ul>
             <li>Restaurante Italiano</li>
@@ -99,15 +124,16 @@
             <li>Comida Japonesa</li>
             <li>Hamburguesas Gourmet</li>
         </ul>
-        <p>¡Elige uno de estos para la sorpresa!</p>
     </div>
 
     <script>
+        // Mostrar la segunda pantalla
         function goToStep1() {
             document.getElementById('intro').classList.add('hidden');
             document.getElementById('step1').classList.remove('hidden');
         }
 
+        // Mostrar la tercera pantalla
         function goToStep2() {
             const date = document.getElementById('dateInput').value;
             if (date) {
