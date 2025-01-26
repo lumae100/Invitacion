@@ -28,7 +28,7 @@
         }
 
         .container {
-            background-color: rgba(255, 255, 255, 0.9); /* Fondo semitransparente */
+            background-color: rgba(255, 255, 255, 0.9);
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -45,7 +45,6 @@
             display: flex;
             align-items: center;
             margin: 15px 0;
-            border-bottom: 1px solid #ccc;
             padding-bottom: 10px;
         }
 
@@ -57,9 +56,14 @@
             margin-right: 15px;
         }
 
-        .option div {
+        .option a {
+            text-decoration: none;
+            color: black;
             font-size: 18px;
-            text-align: left;
+        }
+
+        .option a:hover {
+            color: #4CAF50;
         }
     </style>
 </head>
@@ -68,23 +72,23 @@
         <h1>Opciones para comer</h1>
         <div class="option">
             <img src="takos.jpg" alt="Takos en Plaza del Carmen">
-            <div>Takos en Plaza del Carmen</div>
+            <a href="celebracion.html">Takos en Plaza del Carmen</a>
         </div>
         <div class="option">
             <img src="ginos.jpg" alt="Ginos">
-            <div>Ginos</div>
+            <a href="celebracion.html">Ginos</a>
         </div>
         <div class="option">
             <img src="vips.jpg" alt="Vips">
-            <div>Vips</div>
+            <a href="celebracion.html">Vips</a>
         </div>
         <div class="option">
             <img src="fridays.jpg" alt="Fridays">
-            <div>Fridays</div>
+            <a href="celebracion.html">Fridays</a>
         </div>
         <div class="option">
             <img src="shangrila.jpg" alt="Shangrila Bar Dimsum">
-            <div>Shangrila Bar Dimsum</div>
+            <a href="celebracion.html">Shangrila Bar Dimsum</a>
         </div>
     </div>
 </body>
