@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Regalo Sorpresa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Playfair Display', serif;
             text-align: center;
             margin: 0;
             padding: 0;
@@ -15,17 +16,45 @@
         }
         .container {
             padding: 20px;
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: rgba(255, 255, 255, 0.85); /* Fondo semitransparente */
             margin: 50px auto;
             border-radius: 10px;
             width: 90%;
             max-width: 400px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
         }
         button {
             padding: 10px 20px;
             font-size: 16px;
-            margin-top: 20px;
             cursor: pointer;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        input[type="date"] {
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            font-size: 18px;
+            margin: 10px 0;
         }
         .hidden {
             display: none;
