@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regalo Sorpresa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            padding: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="step1" class="container">
+        <h1>Selecciona una fecha</h1>
+        <input type="date" id="dateInput" />
+        <button onclick="goToStep2()">Continuar</button>
+    </div>
+
+    <div id="step2" class="container hidden">
+        <h1>Opciones para comer</h1>
+        <ul>
+            <li>Restaurante Italiano</li>
+            <li>Bar de Tapas</li>
+            <li>Comida Japonesa</li>
+            <li>Hamburguesas Gourmet</li>
+        </ul>
+        <p>¡Elige uno de estos para la sorpresa!</p>
+    </div>
+
+    <script>
+        function goToStep2() {
+            const date = document.getElementById('dateInput').value;
+            if (date) {
+                document.getElementById('step1').classList.add('hidden');
+                document.getElementById('step2').classList.remove('hidden');
+            } else {
+                alert("Por favor, selecciona una fecha.");
+            }
+        }
+    </script>
+</body>
+</html>
