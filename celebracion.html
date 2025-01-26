@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Celebración!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Playfair Display', serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin: 20px;
+            color: #333;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin: 20px;
+            color: #555;
+        }
+
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <h1>¡Cita concertada con éxito!</h1>
+    <h2>El lugar de inicio será el Campo del Moro a las 5 de la tarde</h2>
+    <canvas id="confetti"></canvas>
+    <script>
+        // Confetti animation
+        const confetti = document.getElementById('confetti');
+        const ctx = confetti.getContext('2d');
+        confetti.width = window.innerWidth;
+        confetti.height = window.innerHeight;
+
+        const particles = Array.from({ length: 200 }).map(() => ({
+            x: Math.random() * confetti.width,
+            y: Math.random() * confetti.height,
+            r: Math.random() * 5 + 2,
+            color: `hsl(${Math.random() * 360}, 100%, 50%)`,
+            speedX: Math.random() * 2 - 1,
+            speedY: Math.random() * 2 + 1,
+        }));
+
+        function draw() {
+            ctx.clearRect(0, 0, confetti.width, confetti.height);
+            particles.forEach((p) => {
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                ctx.fillStyle = p.color;
+                ctx.fill();
+                p.x += p.speedX;
+                p.y += p.speedY;
+
+                if (p.x < 0 || p.x > confetti.width) p.speedX *= -1;
+                if (p.y > confetti.height) p.y = 0;
+            });
+            requestAnimationFrame(draw);
+        }
+
+        draw();
+    </script>
+</body>
+</html>
